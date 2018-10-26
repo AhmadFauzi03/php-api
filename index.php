@@ -28,6 +28,7 @@ $user = query("SELECT * FROM users");
 	 			<td bgcolor="#30ced1" align="center">Username</td>
 	 			<td bgcolor="#30ced1" align="center">Level</td>
 	 			<td bgcolor="#30ced1" align="center">Fullname</td>
+				 <td bgcolor="#30ced1" align="center">Action</td>
 	 		</tr>
 	 		<?php foreach($user as $user) : ?>
 				 <tr>
@@ -35,6 +36,10 @@ $user = query("SELECT * FROM users");
 				 	<td><?= $user["username"] ?></td>
 				 	<td><?= $user["level"] ?></td>
 				 	<td><?= $user["fullname"] ?></td>
+					 <td align="center">
+				<a href="edit.php?id=<?php echo $user['id']; ?>">Edit</a>
+				<a href="delete.php?id=<?php echo $user['id']; ?>">Delete</a>
+			</td>
 				 </tr>
 				<?php endforeach; ?>
 	 	</table>
